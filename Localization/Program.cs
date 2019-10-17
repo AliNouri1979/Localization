@@ -26,7 +26,9 @@ namespace Localization
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new SelectedLanguageForm());
+            DialogResult showDialog = new SelectedLanguageForm().ShowDialog();
+            if (showDialog != DialogResult.OK) return;
+            Application.Run(new MainForm());
         }
     }
 }
